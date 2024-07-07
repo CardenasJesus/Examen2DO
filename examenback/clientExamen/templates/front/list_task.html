@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block title %}TASK Client View{% endblock title %}
+{% block content %}
+<a href="{% url 'emp:task_create' %}" class="btn btn-primary form-control">New Task</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Task Client View</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created</th>
+            <th>Due Date</th>
+            <th>State</th>
+            <th>Employee</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in tasks %}
+          <tr>
+            <td>{{ task.name }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.created }}</td>
+            <td>{{ task.due_date }}</td>
+            <td>{{ task.state }}</td>
+            <td>{{ task.employee }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}

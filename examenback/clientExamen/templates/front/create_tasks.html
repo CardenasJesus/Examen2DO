@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+
+{% block title %}NEW TASKS CLIENT VIEW{% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-outline-success form-control">Create a new Task</button>
+            <a href="{% url 'emp:list_task'%}" class="btn btn-outline-warning form-control">Cancel</a>
+    </form>
+{% endblock content %}
